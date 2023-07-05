@@ -1,9 +1,9 @@
 Source Code Explanation: 
-We do not have source yet. But I would imagine it would pull from some sort of vehicle database.
+We do not have source yet. But I would imagine it would pull from some sort of vehicle database. I believe the classes in my source code will be vehicle, make, model, and type. Explanation of the relationships between them are in the class diagram UML explanation below. 
 
 Folder Structure(s):
-Java SDK Version, 
 
+Java SDK Version:
 
 IDE: I used JGrasp. The specific version was jGRASP version 2.0.6_11 Beta 5.
 
