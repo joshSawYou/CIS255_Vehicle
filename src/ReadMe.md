@@ -1,7 +1,7 @@
 Source Code Explanation: 
 We do not have source yet. But I would imagine it would pull from some sort of vehicle database. I believe the classes in my source code will be vehicle, make, model, and type. Explanation of the relationships between them are in the class diagram UML explanation below. 
 
-Folder Structure(s): There are no class folders yet because we are not supposed to write the source code yet. The folders in this entirre guthub repository are just following the structure provided in the instructions.
+Folder Structure(s): There are no class folders yet because we are not supposed to write the source code yet. The folders in this entire guthub repository are just following the structure provided in the instructions.
 
 Java SDK Version: java 20
 
