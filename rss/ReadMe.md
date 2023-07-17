@@ -72,7 +72,7 @@ Vehicle_UML_ToyotaTundra.png
    This is a unique model abstract class that inherites the public model class. Keep in mind that because it inherites the model class it gains all of the attributes, methods, and relationships from the model class (by this I mean: since this is a child class of model and model is a child of the make class which is a child of the vehicle class, it inherites all attributes and methods and all inheritances/associations from all of these classes)
 
 Vehicle_UML_Model.png
-  This Model class inherites the Make class and therefore gains all of plublic make class's and public vehicle class's attributes and methods and thier inheritances and associations. This model class has its own attributes and methods, as well. Its attributes are private modelName which is a string and protected year which is an int. It also has its own public "displayInfo()" method. 
+  This Model class inherites the Make class and therefore gains all of plublic make class's and public vehicle class's attributes and methods and thier inheritances and associations. This model class has its own attributes and methods, as well. Its attributes are public modelName which is a string and protected year which is an int. It also has its own public "displayInfo()" method. 
 
 Vehicle_UML_Make.png
   This Make class inherites the public Vehicle class and therefore gain all of vehicle's attributes, methods, and its associations. The Make class has its own attribute of protected MakeType which is an enum and association relationship. This makeType attribute is an enum which consists of the options: FORD, TOYOTA, DODGE, HONDA, and TESLA. It also has its own public "displayInfo()" method. 
