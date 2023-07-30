@@ -1,9 +1,10 @@
 // Model class
-class ToyotaTacoma extends ToyotaModels {
-   protected String modelName;
+class TeslaModel_S extends TeslaModels {
+    protected String modelName;
 
+   
 
-   public ToyotaTacoma(String modelName, MakeType makeType, VehicleType vehicleType, int doorCount, EngineType engineType, String color, int year) {
+   public TeslaModel_S(String modelName, MakeType makeType, VehicleType vehicleType, int doorCount, EngineType engineType, String color, int year) {
       super(makeType, vehicleType, doorCount, engineType, color, year);
       this.modelName = modelName;
    }

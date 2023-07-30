@@ -1,6 +1,24 @@
-// FordF150 class
- class FordF150 extends Model {
-   public FordF150(int year, EngineType engineType, int doorCount, String color) {
-      super("F-150", MakeType.FORD, year, doorCount, engineType, color);
+// Model class
+class FordF150 extends FordModels {
+    protected String modelName;
+
+
+   public FordF150(String modelName, MakeType makeType, VehicleType vehicleType, int doorCount, EngineType engineType, String color, int year) {
+      super(makeType, vehicleType, doorCount, engineType, color, year);
+      this.modelName = modelName;
+   }
+
+   public void displayInfo() {
+   String make = this.makeType.toString();
+        String vehicleType = this.vehicleType.toString();
+        String model = this.modelName;
+        String year = String.valueOf(this.year);
+        String engineType = this.engineType.toString();
+        String doorCount = String.valueOf(this.doorCount);
+        String color = this.color;
+
+        String row = make + "|" + vehicleType + "|" + model + "|" + year + "|" + engineType + "|" + doorCount + "|" + color;
+        System.out.println(row);
+
    }
 }

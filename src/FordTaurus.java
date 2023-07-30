@@ -1,7 +1,23 @@
+// Model class
+class FordTaurus extends FordModels {
+    protected String modelName;
 
-// FordTaurus class
- class FordTaurus extends Model {
-   public FordTaurus(int year, EngineType engineType, int doorCount, String color) {
-      super("Taurus", MakeType.FORD, year, doorCount, engineType, color);
-   }
-}
+   
+
+   public FordTaurus(String modelName, MakeType makeType, VehicleType vehicleType, int doorCount, EngineType engineType, String color, int year) {
+      super(makeType, vehicleType, doorCount, engineType, color, year);
+      this.modelName = modelName;  }
+
+      public void displayInfo() {
+   String make = this.makeType.toString();
+        String vehicleType = this.vehicleType.toString();
+        String model = this.modelName;
+        String year = String.valueOf(this.year);
+        String engineType = this.engineType.toString();
+        String doorCount = String.valueOf(this.doorCount);
+        String color = this.color;
+
+        String row = make + "|" + vehicleType + "|" + model + "|" + year + "|" + engineType + "|" + doorCount + "|" + color;
+        System.out.println(row);
+
+   }}
