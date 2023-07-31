@@ -44,35 +44,36 @@ It creates a Scanner object to read user input from the console.
 
 Menu Interface:
 
-      Inside the main method, there is a while loop that displays a menu interface to the user and prompts them to choose an action.
-      The available options are: "Create Vehicle," "Show Vehicles," "Save to File," and "Exit."
-      
-      The user's choice is read using the Scanner object and then processed using a switch statement.
-      
-      Option 1: "Create Vehicle":
-      
-      If the user chooses this option, the createVehicle method is called.
-      The createVehicle method prompts the user for various details about the vehicle, such as door count, year, engine type, color, vehicle type, and make type.
-      Based on the user's input, it calls the Make.sendToModel method to create a specific model object by making a promptForModel() call to the specific model class which then returns a specific vehicle object(e.g., FordF150, ToyotaTacoma, etc.). The created vehicle is then added to the VehicleStorage list.
-      
-      Option 2: "Show Vehicles":
-      
-      If the user chooses this option, the displayVehicles method of the VehicleStorage class is called.
-      The displayVehicles method iterates through the list of vehicles and calls the displayInfo method of each vehicle to print its details on the console.
-      
-      Option 3: "Save to File":
-      
-      If the user chooses this option, the saveToFile method of the VehicleStorage class is called.
-      The saveToFile method prompts the user for a filename and saves the details of all vehicles in the VehicleStorage list to a CSV file.
-      
-      Option 4: "Exit":
-      
-      If the user chooses this option, the exit variable is set to true, and the while loop terminates, leading to the end of the program.
-      
-      It creates an instance of VehicleStorage to store vehicles.
-      It provides a menu-based user interface to perform actions like creating vehicles, displaying vehicles, saving vehicles to a file, and exiting the program, per the instructure's instructions. 
-      The createVehicle() method allows the user to input details of a vehicle and adds it to the VehicleStorage.
-      The saveToFile() method prompts the user for a filename and saves the vehicle details to a CSV file using the VehicleStorage class.
+Inside the main method, there is a while loop that displays a menu interface to the user and prompts them to choose an action.
+The available options are: "Create Vehicle," "Show Vehicles," "Save to File," and "Exit."
+
+The user's choice is read using the Scanner object and then processed using a switch statement.
+
+Option 1: "Create Vehicle":
+
+If the user chooses this option, the createVehicle method is called.
+The createVehicle method prompts the user for various details about the vehicle, such as door count, year, engine type, color, vehicle type, and make type.
+Based on the user's input, it calls the Make.sendToModel method to create a specific model object by making a promptForModel() call to the specific model class which then returns a specific vehicle object(e.g., FordF150, ToyotaTacoma, etc.). The created vehicle is then added to the VehicleStorage list.
+
+Option 2: "Show Vehicles":
+
+If the user chooses this option, the displayVehicles method of the VehicleStorage class is called.
+The displayVehicles method iterates through the list of vehicles and calls the displayInfo method of each vehicle to print its details on the console.
+
+Option 3: "Save to File":
+
+If the user chooses this option, the saveToFile method of the VehicleStorage class is called.
+The saveToFile method prompts the user for a filename and saves the details of all vehicles in the VehicleStorage list to a CSV file.
+
+Option 4: "Exit":
+
+If the user chooses this option, the exit variable is set to true, and the while loop terminates, leading to the end of the program.
+
+It creates an instance of VehicleStorage to store vehicles.
+It provides a menu-based user interface to perform actions like creating vehicles, displaying vehicles, saving vehicles to a file, and exiting the program, per the instructure's instructions. 
+The createVehicle() method allows the user to input details of a vehicle and adds it to the VehicleStorage.
+The saveToFile() method prompts the user for a filename and saves the vehicle details to a CSV file using the VehicleStorage class.
+
 
 
 Overall, this program models vehicles, their makes, types, and models, and provides functionality to create, display, and save vehicle information and export to a file. This is done via class inhertances and associations described above. 
