@@ -11,7 +11,6 @@ public class CIS255_Vehicle {
       VehicleStorage vehicleStorage = new VehicleStorage();
       // creates instance of the scanner for input
       Scanner scanner = new Scanner(System.in);
-      
       boolean exit = false;
       // while loop to print the options and prompt user to enter their choice
       while (!exit) {
@@ -87,13 +86,30 @@ public class CIS255_Vehicle {
     // Prompt user for color
       System.out.print("Enter color: ");
       String color = scanner.next();
-    // Prompt user for vehicle type
+    
+      
+      // prompt for vehicle type
       System.out.println("Select Vehicle Type:");
       System.out.println("1. Truck");
       System.out.println("2. Sedan");
       System.out.println("3. Coupe");
+         
+      
       System.out.print("Enter your choice: ");
+         
       int typeChoice = scanner.nextInt();
+      switch(typeChoice) {
+         case 1:
+            break;
+         case 2:
+            break;
+         case 3:
+            break;
+         default:
+            System.out.println("Invalid choice. Vehicle creation failed.");
+            return;
+      }
+    
    
     // Prompt user for make type
       System.out.println("Select Make Type:");
@@ -121,7 +137,7 @@ public class CIS255_Vehicle {
             break;
          case 4:
             makeType = MakeType.HONDA;
-           vehicle = Make.sendToModel(scanner, makeChoice, makeType, typeChoice, doorCount, engineType, color, year);
+            vehicle = Make.sendToModel(scanner, makeChoice, makeType, typeChoice, doorCount, engineType, color, year);
             break;
          case 5:
             makeType = MakeType.TESLA;
@@ -129,7 +145,7 @@ public class CIS255_Vehicle {
             break;
          default:
             System.out.println("Invalid choice. Vehicle creation failed.");
-            break;
+            return;
       }
    
    
