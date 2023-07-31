@@ -55,9 +55,23 @@ public class CIS255_Vehicle {
     // Prompt user for door count
       System.out.print("Enter door count: ");
       int doorCount = scanner.nextInt();
+      switch(doorCount) {
+         case 2:
+            break;
+         case 4:
+            break;
+         default:
+            System.out.println("Invalid choice. Acceptable door count options are 2 and 4. Vehicle creation failed.");
+            return;
+      }
+   
     // Prompt user for year
       System.out.print("Enter year: ");
       int year = scanner.nextInt();
+      if (year < 2009 || year > 2023) {
+         System.out.println("Invalid choice. Year has to be in the range of 2009 - 2023. Vehicle creation failed.");
+         return;
+      }
     // Prompt user for engine type
       System.out.println("Select Engine Type:");
       System.out.println("1. Gasoline");

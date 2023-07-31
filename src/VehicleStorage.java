@@ -31,7 +31,7 @@ class VehicleStorage {
       File file = new File(fileName);
       FileWriter writer = new FileWriter(file);
    
-      writer.write("Make|Type|Model|Year|Engine|Type|Door Count|Color\n");
+      writer.write("Make|Type|Model|Year|Engin Type|Door Count|Color\n");
    
    
       for (Vehicle vehicle : vehicles) {
@@ -45,15 +45,15 @@ class VehicleStorage {
          String model= "";
          int year = 0;
          
-      if (vehicle instanceof Type) {
+         if (vehicle instanceof Type) {
             Type typeVehicle = (Type) vehicle;
             vehicleType = typeVehicle.vehicleType.toString();
            
-        }
-        if (vehicle instanceof Make) {
-                Make makeVehicle = (Make) vehicle;
-                make = makeVehicle.makeType.toString();
-            }
+         }
+         if (vehicle instanceof Make) {
+            Make makeVehicle = (Make) vehicle;
+            make = makeVehicle.makeType.toString();
+         }
          
          if (vehicle instanceof FordF150) {
             FordF150 fordF150 = (FordF150) vehicle;
@@ -75,6 +75,10 @@ class VehicleStorage {
             FordFiesta fordFiesta = (FordFiesta) vehicle;
             model = fordFiesta.modelName;
             year = fordFiesta.year;
+         } else if (vehicle instanceof FordRanger) {
+            FordRanger r = (FordRanger) vehicle;
+            model = r.modelName;
+            year = r.year;
          } else if (vehicle instanceof FordMustang) {
             FordMustang m = (FordMustang) vehicle;
             model = m.modelName;
@@ -95,7 +99,7 @@ class VehicleStorage {
             ToyotaCamry toyotaCamry = (ToyotaCamry) vehicle;
             model = toyotaCamry.modelName;
             year = toyotaCamry.year;
-          } else if (vehicle instanceof ToyotaAvalon) {
+         } else if (vehicle instanceof ToyotaAvalon) {
             ToyotaAvalon a = (ToyotaAvalon) vehicle;
             model = a.modelName;
             year = a.year;
@@ -115,7 +119,11 @@ class VehicleStorage {
             DodgeChallenger dodgeChallenger = (DodgeChallenger) vehicle;
             model = dodgeChallenger.modelName;
             year = dodgeChallenger.year;
-         } else if (vehicle instanceof DodgeRam1500) {
+         }  else if (vehicle instanceof DodgeHornet) {
+            DodgeHornet h = (DodgeHornet) vehicle;
+            model = h.modelName;
+            year = h.year;
+         }else if (vehicle instanceof DodgeRam1500) {
             DodgeRam1500 r1500 = (DodgeRam1500) vehicle;
             model = r1500.modelName;
             year = r1500.year;
