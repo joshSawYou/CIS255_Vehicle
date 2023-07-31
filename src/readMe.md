@@ -1,22 +1,12 @@
 **Step by Step Source Code Explanation:** 
 
-First in my code are the Enumerations:
+I will start explaining my code with the ROOT class: Vehicle.
 
-EngineType: Represents the engine types of a vehicle (GASOLINE, DIESEL, ELECTRIC).
-MakeType: Represents the make of a vehicle (FORD, TOYOTA, DODGE, HONDA, TESLA).
-VehicleType: Represents the type of a vehicle (SEDAN, COUPE, TRUCK).
-
-Next in my code is the Vehicle Class:
+The Vehicle Class:
 
 This is the base class for all vehicles in the system.
-It contains attributes such as doorCount, engineType, and color.
+It contains attributes such as doorCount, engineType, color, and year.
 In this class there is a displayInfo() method which prints the vehicle's information.
-
-The next class in my code is the Make Class:
-
-It Inherits from the Vehicle class. This means it inheritance all of the Vehicle's class's attriubtes and methods. Additionally, 
-the make class has its own attribute, makeType, which represents the make of the vehicle, as mentioned above.
-Also, this make class has its own displayInfo() method which overrides the displayInfo() from the vehicle class method to include the make information.
 
 Next in my code is the Type Class:
 
@@ -24,13 +14,21 @@ It also inherits from the Vehicle class. This means it inheritance all of the Ve
 the make class has its own attribute, vehicleType, which represents the type of the vehicle, as mentioned above.
 This Type class also has its own displayInfo() method that also overrides the displayInfo() method in the vehicle class to include the vehicle type information.
 
+The next class in my code is the Make Class:
 
-Next in my code is the Model Class:
+It Inherits from the Vehicle class. This means it inheritance all of the Vehicle's class's attriubtes and methods. Additionally, 
+the make class has its own attribute, makeType, which represents the make of the vehicle, as mentioned above.
+Also, this make class has its own displayInfo() method which overrides the displayInfo() from the vehicle class method to include the make information. It also has its own method called sendToModel(). This method starts with a switch statement based on the makeChoice. Depending on the user's selected make (e.g., Ford, Toyota), the method proceeds to the corresponding case. Within each case, the method calls the corresponding prompt method of the specific model class (e.g., FordModels.promptForModel, ToyotaModels.promptForModel) passing the required parameters. This promptForModel() is responsible for getting more specific details about the vehicle model (e.g., Ford F150, Toyota Tacoma) from the user and creating an instance of the appropriate vehicle class (this prompt method is explained Later). The sendToModel method then returns the created vehicle instance, which can be a specific model class instance like FordF150, ToyotaTacoma, etc., depending on the user's choices.
 
-It inherits the Make class. This means it inheritance all of the Make class's attributes and methods.
-The model class has its own attributes, modelName and year, to represent the model name and year of the vehicle.
+Next in my code are the Model Classes (FordModels, ToyotaModels, DodgeModels, HondaModels, and TeslaModels):
+
+They all inherit the Make class. This means it inheritance all of the Make class's attributes and methods.
+These model classes have their own attributes, modelName and year, to represent the model name and year of the vehicle.
 This model class also has its own displayInfo() method that overrides the displayInfo() method from the make class to include the model name and year information.
+They also have their own method called promptForModel(). This method starts with a switch statement based on the typeChoice. Depending on the user's selected vehicle type (e.g., Truck, Sedan, Coupe), the method proceeds to the corresponding case. Within each case, the method displays specific prompts to the user, asking for more details about the vehicle model (e.g., model name, additional features, etc.). After collecting the required information from the user, the method uses that information to create an instance of the corresponding model class (e.g., FordF150, ToyotaTacoma, etc.) by calling the appropriate constructor of the model class. The method then returns the created vehicle instance, which is a specific model class instance representing the chosen make and model with the provided information.
 
+Next are all of the make-Model classes (FordF150, ToyotaTacoma, etc.):
+The purpose of these classes are to define the characteristics and behavior unique to their particular mak-model, while inheriting common attributes and functionalities from its parent classes. They each have their own madelName attribute. These classes have a constructor that takes several parameters to initialize the attributes of the vehicle object. These parameters include modelName, makeType, vehicleType, doorCount, engineType, color, and year. These calles pass the necessary parameters to initialize common attributes from the parent classes. They also have a displayInfo() method for printing the information of the vehicle. 
 Next in my code is the VehicleStorage Class:
 
 This class manages a list of vehicles using the List interface.
@@ -41,10 +39,40 @@ There is also an abstract class for each Unique Model from my Worksheet. These c
 
 The "main" method in the program is in the "CIS255_Vehicle Class:"
 
-It creates an instance of VehicleStorage to store vehicles.
-It provides a menu-based user interface to perform actions like creating vehicles, displaying vehicles, saving vehicles to a file, and exiting the program, per the instructure's instructions. 
-The createVehicle() method allows the user to input details of a vehicle and adds it to the VehicleStorage.
-The saveToFile() method prompts the user for a filename and saves the vehicle details to a CSV file using the VehicleStorage class.
+It creates an instance of the VehicleStorage class to store and manage the list of vehicles.
+It creates a Scanner object to read user input from the console.
+
+Menu Interface:
+
+      Inside the main method, there is a while loop that displays a menu interface to the user and prompts them to choose an action.
+      The available options are: "Create Vehicle," "Show Vehicles," "Save to File," and "Exit."
+      
+      The user's choice is read using the Scanner object and then processed using a switch statement.
+      
+      Option 1: "Create Vehicle":
+      
+      If the user chooses this option, the createVehicle method is called.
+      The createVehicle method prompts the user for various details about the vehicle, such as door count, year, engine type, color, vehicle type, and make type.
+      Based on the user's input, it calls the Make.sendToModel method to create a specific model object by making a promptForModel() call to the specific model class which then returns a specific vehicle object(e.g., FordF150, ToyotaTacoma, etc.). The created vehicle is then added to the VehicleStorage list.
+      
+      Option 2: "Show Vehicles":
+      
+      If the user chooses this option, the displayVehicles method of the VehicleStorage class is called.
+      The displayVehicles method iterates through the list of vehicles and calls the displayInfo method of each vehicle to print its details on the console.
+      
+      Option 3: "Save to File":
+      
+      If the user chooses this option, the saveToFile method of the VehicleStorage class is called.
+      The saveToFile method prompts the user for a filename and saves the details of all vehicles in the VehicleStorage list to a CSV file.
+      
+      Option 4: "Exit":
+      
+      If the user chooses this option, the exit variable is set to true, and the while loop terminates, leading to the end of the program.
+      
+      It creates an instance of VehicleStorage to store vehicles.
+      It provides a menu-based user interface to perform actions like creating vehicles, displaying vehicles, saving vehicles to a file, and exiting the program, per the instructure's instructions. 
+      The createVehicle() method allows the user to input details of a vehicle and adds it to the VehicleStorage.
+      The saveToFile() method prompts the user for a filename and saves the vehicle details to a CSV file using the VehicleStorage class.
 
 
 Overall, this program models vehicles, their makes, types, and models, and provides functionality to create, display, and save vehicle information and export to a file. This is done via class inhertances and associations described above. 
